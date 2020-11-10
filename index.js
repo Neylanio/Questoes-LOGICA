@@ -4,11 +4,9 @@ var input = require("fs").readFileSync("stdin", "utf8");
 
 var values = input.split('\n');
 
-const A = values[0]
-const B = values[1]
-const C = values[2]
+const salary = values[1]
+const salesAmount = values[2]
 
-let total = B * C
+let total = (salesAmount * 0.15) + Number(salary)
 
-console.log(`NUMBER = ${A}`)
-console.log(`SALARY = U$ ${total.toFixed(2)}`)
+console.log(`TOTAL = R$ ${total.toFixed(2)}`)
