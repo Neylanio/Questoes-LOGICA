@@ -1,5 +1,13 @@
-// Ambiente para testes jscript em questoes URI
+// Lista invertida
 
 var input = require("fs").readFileSync("stdin", "utf8");
 
-var valores = input.split(',');
+var values = input.split(',');
+
+var newValues = [];
+
+for (let i = values.length-1; i >= 0; i--) {
+  newValues.push(values[i])    
+}
+
+console.log(newValues)
