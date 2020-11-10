@@ -1,9 +1,11 @@
 var input = require("fs").readFileSync("stdin", "utf8");
 
 
-let primos = [];
 
 // selecionar os primos
+
+// let primos = [];
+
 // var valores = input.split(',');
 
 // for(let i=0; i < valores.length; i++) {
@@ -23,8 +25,14 @@ let primos = [];
 
 // console.log(primos)
 
+// __________________________________________________
+
 
 // N-ésimo primo
+
+let countNésimo = 0;
+let NésimoPrimo = 0;
+
 for(let i = 1; i < 10**10; i++) {
   if(i != 1) {
     let count = 0;
@@ -35,13 +43,14 @@ for(let i = 1; i < 10**10; i++) {
       }
     }
     if(count == 2) {
-      primos.push(i);
+      countNésimo++;
     }
     
-    if(primos.length > input) {
+    if(countNésimo == input) {
+      NésimoPrimo = i;
       i = 10**10;
     }
   }  
 }
 
-console.log(primos[input-1]);
+console.log(NésimoPrimo);
