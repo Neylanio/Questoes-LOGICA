@@ -4,9 +4,16 @@ var input = require("fs").readFileSync("stdin", "utf8");
 
 var values = input.split('\n');
 
-const x = Number(values[0]);
-const y = Number(values[1]).toFixed(1);
+var values1 = values[0].split(' ');
+var values2 = values[1].split(' ');
 
-const total = x / y;
+var x1 = Number(values1[0]);
+var x2 = Number(values2[0]);
 
-console.log(`${total.toFixed(3)} km/l`)
+var y1 = Number(values1[1]);
+var y2 = Number(values2[1]);
+
+
+const total = Math.sqrt((x2 - x1)**2 + (y2 - y1)**2);
+
+console.log(total.toFixed(4))
