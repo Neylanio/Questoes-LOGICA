@@ -2,13 +2,11 @@
 
 var input = require("fs").readFileSync("stdin", "utf8");
 
-var values = input.split(' ');
+var values = input.split('\n');
 
-const A = Number(values[0]);
-const B = Number(values[1]);
-const C = Number(values[2]);
+const x = Number(values[0]);
+const y = Number(values[1]).toFixed(1);
 
-let maior = (A + B + Math.abs(A - B)) /2;
-let total = (maior + C + Math.abs(maior - C))/2;
+const total = x / y;
 
-console.log(`${total} eh o maior`)
+console.log(`${total.toFixed(3)} km/l`)
