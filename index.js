@@ -2,6 +2,8 @@
 
 // Encontrar numero na posição solicitada. Posições iniciadas em 1
 
+// Percorrendo do ultimo p/ o primeiro
+
 var input = require("fs").readFileSync("stdin", "utf8");
 
 var entradas = input.split('\n');
@@ -13,13 +15,13 @@ var position = entradas[1];
 
 function findPosition(numeros, position) {
   let count = 1;
-  for(let i=0; i < numeros.length; i++) {
+  for(let i=numeros.length -1; i >= 0; i--) {
     if(count == position) {
       return numeros[i];
     }
     
-    if(i == numeros.length-1) {
-      i = -1;
+    if(i == 0) {
+      i = numeros.length;
     }
     count++;
   }
