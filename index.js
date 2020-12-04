@@ -15,18 +15,18 @@ function findPosition(numeros, position) {
   let count = 1;
   for(let i=0; i < numeros.length; i++) {
     if(count == position) {
-      return numeros[i-1];
+      return numeros[i];
     }
-
+    
     if(i == numeros.length-1) {
-      i = 0;
+      i = -1;
     }
-
     count++;
   }
 }
 
-console.log(`${numeros}\n`)
+console.log(`Array => ${numeros}`)
+console.log(`Posição => ${position}`)
 
-console.log(findPosition(numeros, position));
+console.log(`Encontrado => ${findPosition(numeros, position)}`);
 
